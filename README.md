@@ -1,5 +1,7 @@
 # AbletonOSC: Control Ableton Live with OSC
 
+> **This fork** adds `/live/arc/` handlers for the Audio Reference Coach end-to-end test rig. See [ARC.md](ARC.md). Upstream behaviour is unchanged.
+
 [![stability-beta](https://img.shields.io/badge/stability-beta-33bbff.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#beta)
 
 AbletonOSC is a MIDI remote script that provides an [Open Sound Control (OSC)](https://ccrma.stanford.edu/groups/osc/) interface to
