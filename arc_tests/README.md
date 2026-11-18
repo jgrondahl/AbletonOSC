@@ -12,6 +12,18 @@ the repository as package `AbletonOSC` whatever its checkout directory is called
 with messages built and parsed by the bundled pythonosc. That catches an argument that does not
 survive OSC encoding, which calling handlers directly cannot.
 
+## Serving the simulated Live
+
+```bash
+python arc_tests/serve.py --port 11000 --reply-port 11001
+```
+
+`serve.py` runs the same handlers and the same simulated set over a real UDP socket, for the rig's own
+client in AI-music-producer-coach (`apps/web/tests/unit/daw-live-sim.test.ts` there starts it with free
+ports). Upstream's song handler cannot load without Live, so it adds the slice of it the rig uses:
+`/live/song/get|set/<property>`, `start_playing` and `stop_playing`. It is a test server, not a stand-in
+for Live: everything under "What only real Live can confirm" below still applies.
+
 ## The simulated set
 
 `fake_live.build_set()` is shaped like the rig's `arc-e2e.als`. It runs at 124 BPM, with sections of
